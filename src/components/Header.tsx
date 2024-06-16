@@ -112,9 +112,53 @@ export default function Header() {
               <div>Resources</div>
               {downArrow}
             </li>
-            <li className="flex group justify-center items-center gap-2 py-7 cursor-pointer hover:text-accent">
+            <li className="flex group justify-center items-center gap-2 py-7 cursor-pointer ">
               <div>For Business</div>
               {downArrow}
+              {/* dropdown section */}
+              <div className="absolute z-50 invisible group-hover:visible w-full max-w-[80%] bg-gray-400/20 backdrop-blur-xl p-10 rounded-[50px] top-full left-1/2 -translate-x-1/2">
+                <div className="bg-white rounded-[25px] flex p-7">
+                  <h2 className="w-2/5 text-3xl mt-5">Products</h2>
+                  <div className="flex">
+                    {/* product 1*/}
+                    <div className="flex p-5 justify-center items-center hover:bg-gradient-to-br from-[#997afa] hover:to-70% to-[#5a68f5] hover:text-slate-50 transition-all duration-200 rounded-3xl">
+                      <div>
+                        <Image
+                          src="/video_editor.svg"
+                          alt="video_editor_logo"
+                          width={100}
+                          height={100}
+                        />
+                      </div>
+                      <div className="py-2 px-3 w-3/4">
+                        <h3 className="font-semibold text-sm">VEED for Business</h3>
+                        <span className=" text-xs ">
+                        Video for teams that require collaboration, access and privacy
+                        </span>
+                      </div>
+                    </div>
+                    {/* product 2*/}
+                    <div className="flex p-5 justify-center items-center hover:bg-[#736ff7] hover:text-slate-50 transition-all duration-200 rounded-3xl">
+                      <div>
+                        <Image
+                          src="/screen_recorder.svg"
+                          alt="screen_recorder_logo"
+                          width={100}
+                          height={100}
+                        />
+                      </div>
+                      <div className="py-2 px-3 w-3/4">
+                        <h3 className="font-semibold text-sm">
+                          Security & Privacy
+                        </h3>
+                        <span className=" text-xs ">
+                        Data privacy, SSO and more
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </li>
             <li className="flex group justify-center items-center gap-2 py-7 cursor-pointer hover:text-accent">
               <div>Pricing</div>

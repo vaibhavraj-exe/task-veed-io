@@ -1,5 +1,8 @@
+"use client"
+
 import Header from "@/components/Header";
 import PlanCard from "@/components/PlanCard";
+import SponsorsCarousel from "@/components/SponsorsCarousel";
 import Image from "next/image";
 
 const planData = {
@@ -35,9 +38,10 @@ export default function Home() {
         </div>
       </section>
       <section>
-        <h2 className="oswald text-4xl font-semibold text-center m-20">
+        <h2 className="oswald text-4xl font-semibold text-center mt-20">
           Trusted by teams at
         </h2>
+        <SponsorsCarousel />
       </section>
     </>
   );
