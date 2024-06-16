@@ -3,20 +3,11 @@
 import Header from "@/components/Header";
 import PlanCard from "@/components/PlanCard";
 import SponsorsCarousel from "@/components/SponsorsCarousel";
+import { basicPlanData, businessPlanData, customPlanData, proPlanData } from "@/constants";
 import Image from "next/image";
 
-const planData = {
-  name: "Basic",
-  description: "Ideal starter plan",
-  price: 290.67,
-  discount: 36,
-  buttonText: "Go Basic",
-  features: ["Remove watermark", "Remove watermark", "Remove watermark"],
-  isHighlighted: true,
-};
 
 export default function Home() {
-  const { name, description, price, discount, buttonText, features } = planData;
   return (
     <>
       <Header />
@@ -30,11 +21,11 @@ export default function Home() {
             <a className="text-accent underline cursor-pointer">Free Plan</a>
           </p>
         </div>
-        <div className=" flex -z-50 w-full gap-5 my-5 justify-between flex-wrap lg:flex-nowrap px-24">
-          <PlanCard {...planData} />
-          <PlanCard {...planData} />
-          <PlanCard {...planData} />
-          <PlanCard {...planData} />
+        <div className=" flex -z-50 w-full gap-5 my-5 justify-between flex-wrap lg:flex-nowrap px-4 md:px-24">
+          <PlanCard {...basicPlanData} />
+          <PlanCard {...proPlanData} />
+          <PlanCard {...businessPlanData} />
+          <PlanCard {...customPlanData} />
         </div>
       </section>
       <section>

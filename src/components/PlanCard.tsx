@@ -11,14 +11,14 @@ export default function PlanCard({
 }: {
   name: string;
   description: string;
-  price: number;
-  discount: number;
+  price: number | string;
+  discount?: number;
   buttonText: string;
   features: string[];
   isHighlighted: boolean;
 }) {
   return (
-    <div className="flex -z-10 relative flex-col grow bg-white p-7 rounded-2xl border-2 border-accent">
+    <div className={`flex -z-10 relative flex-col grow bg-white p-7 rounded-2xl border-2 ${isHighlighted ? "border-accent" : "" }`} >
       <h2 className="text-2xl font-semibold">{name}</h2>
       <p>{description}</p>
       <div className="flex items-center my-3 gap-3">
@@ -26,9 +26,9 @@ export default function PlanCard({
           <span className="text-xl">₹</span>
           <span className="text-3xl font-semibold">{price}</span>
         </p>
-        <div className="bg-[#d0ff99] h-fit w-fit text-xs font-bold text-[#006000] p-1 rounded-full">
+        {discount && <div className="bg-[#d0ff99] h-fit w-fit text-xs font-bold text-[#006000] p-1 rounded-full">
           SAVE {discount}%
-        </div>
+        </div>}
       </div>
       <div className="text-xs">Per user / month, billed yearly</div>
       <button
@@ -48,7 +48,7 @@ export default function PlanCard({
             className="flex items-center space-x-3 rtl:space-x-reverse"
           >
             <Image src="/check.svg" alt="check" width={10} height={10} />
-            <span>Remove watermark</span>
+            <span>{feature}</span>
           </li>
         ))}
       </ul>

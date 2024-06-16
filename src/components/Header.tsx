@@ -1,19 +1,8 @@
 import Image from "next/image";
+import NavBarCard from "./NavBarCard";
+import { downArrow, forBusiness1, forBusiness2, product1, product2, product3 } from "@/constants";
 
-const downArrow = (
-    <svg
-      stroke="currentColor"
-      fill="currentColor"
-      stroke-width="0"
-      viewBox="0 0 512 512"
-      className="h-2.5 w-2.5 transition-transform duration-300 group-hover:rotate-180 group-hover:text-accent"
-      height="1em"
-      width="1em"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"></path>
-    </svg>
-  );
+
 
 export default function Header() {
     return (
@@ -38,68 +27,16 @@ export default function Header() {
               <div className="group-hover:text-accent">Products</div>
               {downArrow}
               {/* dropdown section */}
-              <div className="absolute z-50 invisible group-hover:visible w-full max-w-[80%] bg-gray-400/20 backdrop-blur-xl p-10 rounded-[50px] top-full left-1/2 -translate-x-1/2">
+              <div className="absolute z-50 invisible group-hover:visible w-full max-w-[80%] bg-gray-400/10 backdrop-blur-lg p-10 rounded-[50px] top-full left-1/2 -translate-x-1/2">
                 <div className="bg-white rounded-[25px] flex p-7">
                   <h2 className="w-2/5 text-3xl mt-5">Products</h2>
                   <div className="flex">
                     {/* product 1*/}
-                    <div className="flex p-5 justify-center items-center hover:bg-gradient-to-br from-[#997afa] hover:to-70% to-[#5a68f5] hover:text-slate-50 transition-all duration-200 rounded-3xl">
-                      <div>
-                        <Image
-                          src="/video_editor.svg"
-                          alt="video_editor_logo"
-                          width={100}
-                          height={100}
-                        />
-                      </div>
-                      <div className="py-2 px-3 w-3/4">
-                        <h3 className="font-semibold text-sm">Video Editor</h3>
-                        <span className=" text-xs ">
-                          Create videos with a single click. Add subtitles,
-                          remove background noise and more
-                        </span>
-                      </div>
-                    </div>
+                    <NavBarCard {...product1} />
                     {/* product 2*/}
-                    <div className="flex p-5 justify-center items-center hover:bg-[#736ff7] hover:text-slate-50 transition-all duration-200 rounded-3xl">
-                      <div>
-                        <Image
-                          src="/screen_recorder.svg"
-                          alt="screen_recorder_logo"
-                          width={100}
-                          height={100}
-                        />
-                      </div>
-                      <div className="py-2 px-3 w-3/4">
-                        <h3 className="font-semibold text-sm">
-                          Screen Recorder
-                        </h3>
-                        <span className=" text-xs ">
-                          Automatically add subtitles to your videos.
-                          Super-fast, accurate transcriptions in seconds
-                        </span>
-                      </div>
-                    </div>
+                    <NavBarCard {...product2} />
                     {/* product 3*/}
-                    <div className="flex p-5 justify-center items-center hover:bg-[#736ff7] hover:text-slate-50 transition-all duration-200 rounded-3xl">
-                      <div>
-                        <Image
-                          src="/subs.svg"
-                          alt="subs_logo"
-                          width={100}
-                          height={100}
-                        />
-                      </div>
-                      <div className="py-2 px-3 w-3/4">
-                        <h3 className="font-semibold text-sm">
-                          Subtitbles & Transcription
-                        </h3>
-                        <span className=" text-xs">
-                          Screen & webcam recordings that are easy to edit and
-                          share online
-                        </span>
-                      </div>
-                    </div>
+                    <NavBarCard {...product3} />
                   </div>
                 </div>
               </div>
@@ -118,44 +55,12 @@ export default function Header() {
               {/* dropdown section */}
               <div className="absolute z-50 invisible group-hover:visible w-full max-w-[80%] bg-gray-400/20 backdrop-blur-xl p-10 rounded-[50px] top-full left-1/2 -translate-x-1/2">
                 <div className="bg-white rounded-[25px] flex p-7">
-                  <h2 className="w-2/5 text-3xl mt-5">Products</h2>
+                  <h2 className="w-2/5 text-3xl mt-5">For Business</h2>
                   <div className="flex">
                     {/* product 1*/}
-                    <div className="flex p-5 justify-center items-center hover:bg-gradient-to-br from-[#997afa] hover:to-70% to-[#5a68f5] hover:text-slate-50 transition-all duration-200 rounded-3xl">
-                      <div>
-                        <Image
-                          src="/video_editor.svg"
-                          alt="video_editor_logo"
-                          width={100}
-                          height={100}
-                        />
-                      </div>
-                      <div className="py-2 px-3 w-3/4">
-                        <h3 className="font-semibold text-sm">VEED for Business</h3>
-                        <span className=" text-xs ">
-                        Video for teams that require collaboration, access and privacy
-                        </span>
-                      </div>
-                    </div>
+                    <NavBarCard {...forBusiness1} />
                     {/* product 2*/}
-                    <div className="flex p-5 justify-center items-center hover:bg-[#736ff7] hover:text-slate-50 transition-all duration-200 rounded-3xl">
-                      <div>
-                        <Image
-                          src="/screen_recorder.svg"
-                          alt="screen_recorder_logo"
-                          width={100}
-                          height={100}
-                        />
-                      </div>
-                      <div className="py-2 px-3 w-3/4">
-                        <h3 className="font-semibold text-sm">
-                          Security & Privacy
-                        </h3>
-                        <span className=" text-xs ">
-                        Data privacy, SSO and more
-                        </span>
-                      </div>
-                    </div>
+                    <NavBarCard {...forBusiness2} />
                   </div>
                 </div>
               </div>
